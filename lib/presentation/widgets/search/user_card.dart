@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:github_finder/domain/entities/user.dart';
+import 'package:github_finder/presentation/pages/detail_page.dart';
 import 'package:github_finder/presentation/pages/user_detail_page.dart';
 
 class UserCard extends StatelessWidget {
@@ -19,11 +20,17 @@ class UserCard extends StatelessWidget {
         onTap: (){
           Navigator.pushNamed(
               context,
+              DetailRepoPage.route,
+              arguments: user.login
+          );
+        },
+        /*onTap: (){
+          Navigator.pushNamed(
+              context,
               UserDetailPage.route,
               arguments: user.login
           );
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => DetailRepoPage(user: '',)));
-        },
+        },*/
         child: ListTile(
           leading: CircleAvatar(
             foregroundImage: NetworkImage(user.avatar),

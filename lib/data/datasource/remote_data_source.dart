@@ -40,7 +40,7 @@ class RemoteDataSourceImpl implements RemoteDataSource{
   @override
   Future<List<RepoModel>> loadRepo(String username) async{
     // TODO: implement loadRepo
-    final response = await client.get(Uri.parse('$baseUrl/$username/repos'));
+    final response = await client.get(Uri.parse('https://api.github.com/users/$username/repos'));
     // print(loadRepo(username));
     if(response.statusCode == 200){
       print(response.body);

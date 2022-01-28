@@ -5,9 +5,9 @@ import 'package:equatable/equatable.dart';
 
 class Repo extends Equatable{
   int id;
-  String name;
-  String description;
-  String language;
+  String? name;
+  String? description;
+  String? language;
 
   Repo({
     required this.id,

@@ -12,12 +12,12 @@ class RepoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: const EdgeInsets.all(20),
-      title: Text(repo.name),
+      title: Text(repo.name ?? ''),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 10,),
-          Text(repo.description),
+          Text(repo.description ?? ''),
         ],
       ),
     );

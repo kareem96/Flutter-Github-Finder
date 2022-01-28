@@ -6,9 +6,9 @@ import 'package:github_finder/domain/entities/user_repo.dart';
 
 class RepoModel extends Equatable{
   final int id;
-  final String name;
-  final String description;
-  final String language;
+  final String? name;
+  final String? description;
+  final String? language;
   RepoModel({
     required this.id,
     required this.name,
