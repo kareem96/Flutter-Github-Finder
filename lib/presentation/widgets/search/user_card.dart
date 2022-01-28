@@ -17,20 +17,20 @@ class UserCard extends StatelessWidget {
       elevation: 5,
       margin: const EdgeInsets.only(top: 5, bottom: 10),
       child: InkWell(
-        onTap: (){
+        /*onTap: (){
           Navigator.pushNamed(
               context,
               DetailRepoPage.route,
               arguments: user.login
           );
-        },
-        /*onTap: (){
+        },*/
+        onTap: (){
           Navigator.pushNamed(
               context,
               UserDetailPage.route,
               arguments: user.login
           );
-        },*/
+        },
         child: ListTile(
           leading: CircleAvatar(
             foregroundImage: NetworkImage(user.avatar),

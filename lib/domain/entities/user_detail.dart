@@ -16,12 +16,12 @@ class UserDetail extends Equatable {
   });
 
   final int id;
-  final String login;
-  final String name;
-  final String avatar_url;
-  final String bio;
-  final String company;
-  final String location;
+  final String? login;
+  final String? name;
+  final String? avatar_url;
+  final String? bio;
+  final String? company;
+  final String? location;
   final int followers;
   final int following;
 

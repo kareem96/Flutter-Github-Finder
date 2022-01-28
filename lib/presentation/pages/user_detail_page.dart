@@ -30,7 +30,7 @@ class _UserDetailPageState extends State<UserDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(''),),
+      appBar: AppBar(title: Text(widget.username),),
       body: Consumer<UserDetailNotifier>(
         builder: (context, provider, child){
           if(provider.userState == RequestState.Loading){
@@ -38,10 +38,7 @@ class _UserDetailPageState extends State<UserDetailPage> {
           }else if(provider.userState == RequestState.Loaded){
             final user = provider.user;
             return SafeArea(
-              child: Container(),
-              /*DetailContent(
-              user,
-            ),*/
+              child: DetailContent(user,),
             );
           }else{
             return Text(provider.message);
