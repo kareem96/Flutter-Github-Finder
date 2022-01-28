@@ -1,0 +1,60 @@
+
+
+
+import 'package:equatable/equatable.dart';
+import 'package:github_finder/domain/entities/user.dart';
+
+/*
+class UserModel extends User{
+  UserModel({required int id, required String login, required String avatar}) : super(
+    id: id,
+    login: login,
+    avatar: avatar
+  );
+
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+      id: json['id'] ?? 0,
+      login: json['login'] ?? '',
+      avatar: json['avatar'] ?? '',
+  );
+}*/
+
+
+class UserModel extends Equatable{
+  final int id;
+  final String login;
+  final String avatar;
+  UserModel({
+    required this.id,
+    required this.login,
+    required this.avatar
+  });
+
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+    id: json['id'] ,
+    login: json['login'] ,
+    avatar: json['avatar_url'],
+  );
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'login': login,
+    'avatar_url': avatar,
+  };
+
+  User toEntity(){
+    return User(
+        id: id,
+        login: login,
+        avatar: avatar
+    );
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [
+    id,
+    login,
+    avatar,
+  ];
+}
