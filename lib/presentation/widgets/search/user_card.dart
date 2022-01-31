@@ -4,7 +4,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_finder/domain/entities/user.dart';
 import 'package:github_finder/presentation/pages/detail_page.dart';
-import 'package:github_finder/presentation/pages/user_detail_page.dart';
 
 class UserCard extends StatelessWidget {
   final User user;
@@ -13,21 +12,14 @@ class UserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.grey.shade700,
+      color: Colors.indigo,
       elevation: 5,
       margin: const EdgeInsets.only(top: 5, bottom: 10),
       child: InkWell(
-        /*onTap: (){
-          Navigator.pushNamed(
-              context,
-              DetailRepoPage.route,
-              arguments: user.login
-          );
-        },*/
         onTap: (){
           Navigator.pushNamed(
               context,
-              UserDetailPage.route,
+              DetailRepoPage.route,
               arguments: user.login
           );
         },

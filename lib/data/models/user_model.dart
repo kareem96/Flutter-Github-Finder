@@ -4,27 +4,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:github_finder/domain/entities/user.dart';
 
-/*
-class UserModel extends User{
-  UserModel({required int id, required String login, required String avatar}) : super(
-    id: id,
-    login: login,
-    avatar: avatar
-  );
-
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-      id: json['id'] ?? 0,
-      login: json['login'] ?? '',
-      avatar: json['avatar'] ?? '',
-  );
-}*/
-
-
 class UserModel extends Equatable{
   final int id;
   final String login;
   final String avatar;
-  UserModel({
+  const UserModel({
     required this.id,
     required this.login,
     required this.avatar

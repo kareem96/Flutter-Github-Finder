@@ -16,7 +16,6 @@ abstract class RemoteDataSource{
 }
 
 
-// @LazySingleton(as: IRemoteDataSource)
 class RemoteDataSourceImpl implements RemoteDataSource{
   static const baseUrl = 'https://api.github.com/search/users';
   final http.Client client;
@@ -25,7 +24,6 @@ class RemoteDataSourceImpl implements RemoteDataSource{
 
   @override
   Future<List<UserModel>> searchUser(String query)async {
-    // final url = Uri.parse('https://api.github.com/search/users?q=$query');
     final response = await client.get(Uri.parse('$baseUrl?q=$query'));
     if(response.statusCode == 200){
       print(response.body);

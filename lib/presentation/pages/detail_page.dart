@@ -9,7 +9,6 @@ import 'package:provider/provider.dart';
 
 class DetailRepoPage extends StatefulWidget {
   static const route = '/detail';
-  // final User user;
   final String user;
   const DetailRepoPage({Key? key, required this.user,}) : super(key: key);
 
@@ -30,7 +29,10 @@ class _DetailRepoPageState extends State<DetailRepoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.user.toString()),),
+      appBar: AppBar(
+        title: Text(widget.user.toString()),
+
+      ),
       body: Consumer<LoadRepoNotifier>(
           builder: (context, data, child){
             if(data.state == RequestState.Loading){
@@ -52,17 +54,6 @@ class _DetailRepoPageState extends State<DetailRepoPage> {
             return Container();
           }
       )
-      /*body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 10,),
-            Center(
-              child: CircleAvatar(
-                maxRadius: 50.0, foregroundImage: NetworkImage(widget.user.avatar,),),
-            ),
-          ],
-        ),
-      ),*/
     );
   }
 }

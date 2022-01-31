@@ -3,7 +3,7 @@
 import 'package:equatable/equatable.dart';
 
 class UserDetail extends Equatable {
-  UserDetail({
+  const UserDetail({
     required this.id,
     required this.login,
     required this.name,

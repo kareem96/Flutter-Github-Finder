@@ -9,7 +9,7 @@ class RepoModel extends Equatable{
   final String? name;
   final String? description;
   final String? language;
-  RepoModel({
+  const RepoModel({
     required this.id,
     required this.name,
     required this.description,

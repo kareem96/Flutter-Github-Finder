@@ -14,7 +14,6 @@ import 'package:github_finder/domain/entities/user_repo.dart';
 import 'package:github_finder/domain/repositories/user_repository.dart';
 
 
-// @LazySingleton(as: IUserRepository)
 class UserRepositoryImpl implements UserRepository{
   final RemoteDataSource remoteDataSource;
 
@@ -41,7 +40,6 @@ class UserRepositoryImpl implements UserRepository{
     try{
       final result = await remoteDataSource.loadRepo(username);
       return Right(result.map((e) => e.toEntity()).toList());
-      // return Right(result);
     }on ServerException{
     return Left(ServerFailure());
     }on SocketException{

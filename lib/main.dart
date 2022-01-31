@@ -11,7 +11,6 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // initializeDI();
   di.init();
   runApp(MyApp());
 }
@@ -20,6 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<SearchListNotifier>(
@@ -33,8 +33,9 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Github Finder user',
-        theme: ThemeData.light().copyWith(
+        theme: ThemeData.dark().copyWith(
           primaryColor: Colors.indigo,
         ),
         home: HomePage(),

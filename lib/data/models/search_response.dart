@@ -7,7 +7,7 @@ import 'package:github_finder/data/models/user_model.dart';
 class SearchResponse extends Equatable{
   final List<UserModel> userList;
 
-  SearchResponse({required this.userList});
+  const SearchResponse({required this.userList});
 
   factory SearchResponse.fromJson(Map<String, dynamic> json) => SearchResponse(
       userList: List<UserModel>.from((json['items'] as List)
