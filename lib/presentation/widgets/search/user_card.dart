@@ -31,7 +31,7 @@ class UserCard extends StatelessWidget {
             user.login,
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
           ),
-          subtitle: const Text('Tap to view detail', style: TextStyle(color: Colors.white60),),
+          subtitle: const Text('Tap to view repository', style: TextStyle(color: Colors.white60),),
         ),
       ),
     );
